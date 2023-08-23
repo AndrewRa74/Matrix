@@ -3,18 +3,18 @@ public class Matrix {
 
     public static void main(String[] args) {
         int[][] a ={//0 1 2 3 4
-                     {1,6,8,9,20},   //0
-                     {5,7,10,13,17}, //1
-                     {12,14,16,18,21},//2
-                     {15,19,22,25,27},//3
-                     {23,24,26,28,30} //4
+                     {1,6,8,9,11},   //0
+                     {5,7,10,13,14}, //1
+                     {12,15,16,18,19},//2
+                     {17,21,22,25,27},//3
+                     {23,24,26,28,30},//4
+                     {29,31,34,35,37} //5
                    };
-        int b = 24;
+        int b = 21;
         Search s = new Search(a,b);
         s.todo();
         }
     }
-
 
 class Search{
     int[][] a;
@@ -24,7 +24,7 @@ class Search{
         this.b = b;
     }
     public void todo(){
-        int k = a[a.length-1].length-1;
+        int k = a[0].length-1;
         for (int i = 0; i <a.length; i++) {
             for (int j = k; j>=0; j--) {
                 System.out.println(a[i][j]+" "+i+" "+j);
