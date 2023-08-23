@@ -1,7 +1,7 @@
 public class DemoGeometric {
     public static void main(String[] args) {
         Rectangle f1 = new Rectangle("Прямоугольник","Синий",5,6);
-        System.out.println(f1+": "+f1.getLength()+"x"+f1.getWidth()+" Площадь = "+f1.Area());
+        System.out.println(f1+" "+f1.getLength()+"x"+f1.getWidth()+" Площадь = "+f1.Area());
     }
 }
 class Shape{
