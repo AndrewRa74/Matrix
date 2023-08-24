@@ -1,10 +1,10 @@
 public class DemoGeometric {
     public static void main(String[] args) {
-        Rectangle f1 = new Rectangle("Прямоугольник","Синий",5,6);
-        System.out.println(f1+" "+f1.getLength()+"x"+f1.getWidth()+" Площадь = "+f1.Area());
+        Shape f1 = new Rectangle("Прямоугольник","Синий",5,6);
+        System.out.println(f1);
     }
 }
-class Shape{
+abstract class Shape{
     private String shape;
     private String color;
     Shape(String shape,String color){
@@ -17,10 +17,9 @@ class Shape{
     public String getColor(){
         return color;
     }
+    abstract public int getArea();
     @Override
-    public String toString(){
-        return ("Фигура: "+getShape()+" "+getColor());
-    }
+    abstract public String toString();
 }
 class Rectangle extends Shape{
     private int length;
@@ -42,7 +41,11 @@ class Rectangle extends Shape{
     public void setWidth(int width){
         this.width = width;
     }
-    public int Area(){
+    public int getArea(){
         return getLength()*getWidth();
+    }
+    @Override
+    public String toString(){
+        return getColor()+" "+getShape()+" "+getLength()+"x"+getWidth()+" Площадью "+getArea();
     }
 }
